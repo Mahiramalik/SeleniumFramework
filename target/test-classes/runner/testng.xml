@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+
+<!-- Suite -->
+
+<parameter name="grid" value="true"/>
+
+<listeners>
+
+<listener class-name="extentListeners.ExtentListeners"/>
+
+</listeners>
+<test name="Chrome Test" thread-count="5">
+
+<parameter name="browser" value="chrome"/>
+
+<parameter name="url" value="https://www.expedia.com/"/>
+
+
+<classes>
+
+<class name="tests.FlightSearchTest"/>
+
+<class name="tests.HotelSearchTest"/>
+
+</classes>
+
+</test>
+
+<!-- Test -->
+
+<test name="Firefox Test" thread-count="5">
+
+<parameter name="browser" value="firefox"/>
+
+<parameter name="url" value="https://www.expedia.com/"/>
+<classes>
+
+<class name="tests.FlightSearchTest"/>
+
+<class name="tests.HotelSearchTest"/>
+
+</classes>
+
+</test>
+
+<!-- Test -->
+
+
+</suite>
