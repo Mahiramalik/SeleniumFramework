@@ -19,7 +19,6 @@ import pages.HomePage;
 import pages.HotelSearchPage;
 import pages.HotelSearchResultsPage;
 import utilities.DataUtils;
-
 public class HotelSearchTest extends BaseTest {
 	
 	@Parameters({"grid","browser", "url"})
@@ -35,36 +34,11 @@ public class HotelSearchTest extends BaseTest {
 		HomePage hp = new HomePage();
 		HotelSearchPage hsp = hp.navigateToHotelSearchPage();
 		HotelSearchResultsPage hsrp = hsp.searchHotel(destination, checkinDate, checkoutDate);
-		String  WebTitle = hsrp.fetchTitle();
-		Assert.assertTrue(WebTitle.contains(title));
-		
-	}
-	@DataProvider
-	public Object[][] getData() throws IOException{
-		File f = new File("./src/test/resources/ExcelFiles/TestData.xlsx");
-		FileInputStream fis = new FileInputStream(f);
-		Workbook wb = new XSSFWorkbook(fis);
-		
-		Sheet sh = wb.getSheet("serchHotel");
-		int numOfRows = sh.getPhysicalNumberOfRows();
-		
-		System.out.println("Num of rows in sheet test data: "+numOfRows);
-		
-		int numOfCols = sh.getRow(0).getLastCellNum();
-		
-		System.out.println("Num of cols in sheet test data: "+numOfCols);
-		Object[][] data = new Object[numOfRows-1][numOfCols];
-		
-		for(int i=1;i<numOfRows;i++) {
-			for(int j=0; j<numOfCols; j++) {
-				data[i-1][j]=sh.getRow(i).getCell(j).getStringCellValue();
-				
-			}
+		String webTitle = hsrp.fetchTitle();
+		Assert.assertTrue(webTitle.contains(title));
+	
 		}
-		return data;
-				}
-	
-	
+		
 	
 	@AfterClass
 	public void tearDown() {

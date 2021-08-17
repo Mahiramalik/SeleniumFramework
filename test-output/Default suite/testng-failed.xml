@@ -10,13 +10,6 @@
           <include name="searchFlight"/>
         </methods>
       </class> <!-- tests.FlightSearchTest -->
-      <class name="tests.HotelSearchTest">
-        <methods>
-          <include name="searchHotel"/>
-          <include name="tearDown"/>
-          <include name="init"/>
-        </methods>
-      </class> <!-- tests.HotelSearchTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

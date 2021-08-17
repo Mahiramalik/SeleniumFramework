@@ -16,7 +16,8 @@ public class HomePage extends BasePage {
 		
 	}
 	public HotelSearchPage navigateToHotelSearchPage() {
-		hotelTab.click();
+		//hotelTab.click();
+		click(hotelTab, "Hotel Tab");
 		return new HotelSearchPage();
 		}
 	public FlightSearchPage navigateToFlightSearchPage() {

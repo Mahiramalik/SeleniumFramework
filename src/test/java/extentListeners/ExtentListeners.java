@@ -25,7 +25,8 @@ public class ExtentListeners implements ITestListener{
 	ExtentReports extent = ExtentManager.createInstance("./src/test/resources/reports/"+fileName);
 	
 	public static ThreadLocal<ExtentTest> testReport= new ThreadLocal<ExtentTest>();
-			
+
+	
 	public void onTestStart(ITestResult result) {
 		
 		Map<String, String> params = new HashMap<String, String>();
@@ -49,7 +50,7 @@ public class ExtentListeners implements ITestListener{
 		testReport.get().pass(m);
 		
 	}
-
+	
 	public void onTestFailure(ITestResult result) {
 		
 		
@@ -77,20 +78,22 @@ public class ExtentListeners implements ITestListener{
 		
 	}
 
+	
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub
 		
 	}
-
 	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub

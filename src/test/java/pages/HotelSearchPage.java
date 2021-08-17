@@ -35,37 +35,37 @@ public class HotelSearchPage extends BasePage {
 	public HotelSearchResultsPage searchHotel(String destination, String checkinDate, String checkoutDate) {
 		
 		
-		destinationBtn.click();
-		//click(destinationBtn, "Destination Button");
+		//destinationBtn.click();
+		click(destinationBtn, "Destination Button");
 				
 		
-		destinationInputTxtBx.sendKeys(destination, Keys.ENTER);
-		//typeWithEnter(destinationInputTxtBx, "Destination Input Text Box", destination);
+		//destinationInputTxtBx.sendKeys(destination, Keys.ENTER);
+		typeWithEnter(destinationInputTxtBx, "Destination Input Text Box", destination);
 		
 		
-		checkinBtn.click();
-		//click(checkinBtn, "Checkin date button");
+		//checkinBtn.click();
+		click(checkinBtn, "Checkin date button");
 		
 		
-		driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")).click();
+		//driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")).click();
 		
-		//click(driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")), checkinDate);
+		click(driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")), checkinDate);
 		
-		doneBtn.click();
-		//click(doneBtn, "Done button");
+		//doneBtn.click();
+		click(doneBtn, "Done button");
 		
-		checkoutBtn.click();
-		//click(checkoutBtn, "Checkout Button");
+		//checkoutBtn.click();
+		click(checkoutBtn, "Checkout Button");
 		
-		driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")).click();
-		//click(driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")), checkoutDate);
+		//driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")).click();
+		click(driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")), checkoutDate);
 		
-		doneBtn.click();
-		//click(doneBtn, "Done button");
+		//doneBtn.click();
+		click(doneBtn, "Done button");
 
 
-		submitBtn.click();
-		//click(submitBtn, "Submit Button");
+		//submitBtn.click();
+		click(submitBtn, "Submit Button");
 		
 		return new HotelSearchResultsPage();
 
