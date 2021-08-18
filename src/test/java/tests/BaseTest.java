@@ -17,7 +17,7 @@ import utilities.DriverManager;
 public class BaseTest {
 			public  WebDriver driver;
 	public void launchBrowser(String grid, String browser, String url) {
-		
+
 		if(grid.equalsIgnoreCase("true")) {
 
 			DesiredCapabilities caps;
@@ -39,10 +39,10 @@ public class BaseTest {
 			try {
 				driver = new RemoteWebDriver(new URL("http://192.168.56.1:4444/wd/hub"), caps);
 			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
+				
 		}else {
 			if(browser.equalsIgnoreCase("chrome")) {
 
